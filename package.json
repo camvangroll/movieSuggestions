@@ -1,5 +1,5 @@
 {
-  "name": "Movie Suggestions",
+  "name": "movieSuggestions",
   "version": "1.0.0",
   "description": "website to give you suggestions for movies, and then cross references with the Beschdel test",
   "main": "index.js",
