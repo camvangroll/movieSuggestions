@@ -4,18 +4,16 @@ var movieApp = {};
 
 var imdbNum = 2593224;
 
-var releaseYear = 1990;
 
-movieApp.getMoviesByYear = function(year) {
+movieApp.getMovies = function(yearAndGenre) {
+	var releaseYear = $('#year').val();
+	var genreCode = $('#genre').val();
 	$.ajax({
-		url: 'http://api.themoviedb.org/3/discover/movie?api_key=' + movieDBKey + '&primary_release_year=' + releaseYear,
+		url: 'http://api.themoviedb.org/3/discover/movie?api_key=' + movieDBKey + '&primary_release_year=' + releaseYear + '&with_genres=' + genreCode,
 		method: 'GET',
 		dataType: 'jsonp'
 	}).then(function(data) {
 		console.log(data);
-		for (var i in data.results) {
-			$('.results').append('<div>' + data.results[i].title + ' ' + data.results[i].id + '</div>');
-		}
 	});
 }
 
@@ -39,9 +37,22 @@ movieApp.searchBechdel = function() {
 	});
 };
 
+movieApp.results = function() {
+	$('form').on('submit', function(e) {
+		e.preventDefault();
+		movieApp.getMovies();
+		// movieApp.getIMDBNumber(861);
+		// movieApp.searchBechdel();
+		console.log("results");
+		for (var i in data.results) {
+			$('.results').append('<div>' + data.results[i].title + ' ' + data.results[i].id + '</div>');
+		}
+	});
+	
+}
+
+
+
 $(function() {
-	console.log('program executed');
-	movieApp.searchBechdel();
-	movieApp.getMoviesByYear();
-	movieApp.getIMDBNumber(861);
+	movieApp.results();
 });
