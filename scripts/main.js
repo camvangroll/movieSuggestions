@@ -18,7 +18,7 @@ movieApp.getMovies = function() {
 		console.log(data);
 		movieInfo = data;
 		for (var i in data.results) {
-			$('.results').append('<div>' + data.results[i].title + ' ' + data.results[i].id + '</div>');
+			$('.results').append('<div class="movie">' + '<img class="movie-poster" src="http://image.tmdb.org/t/p/w500' + data.results[i].poster_path + '">' + '<p>' + data.results[i].title + '</p>' + '<p class="description">' + data.results[i].overview + '</p>' + '<p>' + data.results[i].id + '</p>' + '</div>');
 		};
 	});
 };

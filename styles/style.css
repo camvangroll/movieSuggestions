@@ -134,3 +134,18 @@ html {
 body {
   font-size: 12px;
   font-size: 1.2rem; }
+
+.container {
+  max-width: 1280px;
+  width: 90%;
+  margin: 0 auto; }
+
+div.movie {
+  width: 33.33%;
+  float: left; }
+
+.movie-poster {
+  width: 50%; }
+
+.description {
+  width: 80%; }
