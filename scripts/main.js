@@ -34,13 +34,18 @@ movieApp.getIMDBNumber = function(movieNum) {
 };
 
 movieApp.searchBechdel = function() {
+	movieApp.searchBechdel = function() {
 	$.ajax({
-		url: 'http://bechdeltest.com/api/v1/getMovieByImdbId?' + imdbNum,
+		url: 'http://proxy.hackeryou.com',
 		method: 'GET',
-		dataType: 'json'
+		dataType: 'json',
+		data: {
+			reqUrl: 'http://bechdeltest.com/api/v1/getMovieByImdbId?' + imdbNum
+		}
 	}).then(function(data) {
 		console.log(data);
 	});
+	};
 };
 
 movieApp.results = function() {
