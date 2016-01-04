@@ -4,8 +4,10 @@ var movieApp = {};
 
 var imdbNum = 2593224;
 
+var movieInfo = {};
 
-movieApp.getMovies = function(yearAndGenre) {
+
+movieApp.getMovies = function() {
 	var releaseYear = $('#year').val();
 	var genreCode = $('#genre').val();
 	$.ajax({
@@ -14,8 +16,12 @@ movieApp.getMovies = function(yearAndGenre) {
 		dataType: 'jsonp'
 	}).then(function(data) {
 		console.log(data);
+		movieInfo = data;
+		for (var i in data.results) {
+			$('.results').append('<div>' + data.results[i].title + ' ' + data.results[i].id + '</div>');
+		};
 	});
-}
+};
 
 movieApp.getIMDBNumber = function(movieNum) {
 	$.ajax({
@@ -25,7 +31,7 @@ movieApp.getIMDBNumber = function(movieNum) {
 	}).then(function(data) {
 		console.log('imdb number is ' + data.imdb_id);
 	})
-}
+};
 
 movieApp.searchBechdel = function() {
 	$.ajax({
@@ -44,13 +50,9 @@ movieApp.results = function() {
 		// movieApp.getIMDBNumber(861);
 		// movieApp.searchBechdel();
 		console.log("results");
-		for (var i in data.results) {
-			$('.results').append('<div>' + data.results[i].title + ' ' + data.results[i].id + '</div>');
-		}
 	});
 	
 }
-
 
 
 $(function() {
