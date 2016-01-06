@@ -112,7 +112,7 @@ div.movie {
 }
 
 .movie h3 {
-	@include fontSize(18);
+	@include fontSize(16);
 }
 
 .movie-poster {
@@ -123,5 +123,5 @@ div.movie {
 .description {
 	width: 80%;
 	margin: 0 auto;
-	@include fontSize(16);
+	@include fontSize(14);
 }

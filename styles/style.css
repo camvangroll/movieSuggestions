@@ -210,8 +210,8 @@ div.movie {
   margin: 1%; }
 
 .movie h3 {
-  font-size: 18px;
-  font-size: 1.8rem; }
+  font-size: 16px;
+  font-size: 1.6rem; }
 
 .movie-poster {
   width: 50%;
@@ -220,5 +220,5 @@ div.movie {
 .description {
   width: 80%;
   margin: 0 auto;
-  font-size: 16px;
-  font-size: 1.6rem; }
+  font-size: 14px;
+  font-size: 1.4rem; }
