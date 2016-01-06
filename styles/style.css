@@ -133,19 +133,92 @@ html {
 
 body {
   font-size: 12px;
-  font-size: 1.2rem; }
+  font-size: 1.2rem;
+  font-family: 'Francois One', sans-serif;
+  background: #9DC5BB; }
 
 .container {
   max-width: 1280px;
   width: 90%;
   margin: 0 auto; }
 
+form {
+  text-align: center; }
+
+h1 {
+  text-align: center;
+  padding: 5% 0;
+  font-size: 46px;
+  font-size: 4.6rem;
+  letter-spacing: 4px; }
+
+h2 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300; }
+  h2 span {
+    padding: 0 1% 0 2%;
+    font-size: 28px;
+    font-size: 2.8rem;
+    color: #E8EDDF; }
+  h2 select {
+    -webkit-appearance: none;
+    padding-right: 2%; }
+
+select.genre {
+  width: 13%;
+  padding: 5px 0 5px 28px; }
+
+select.year {
+  width: 10%;
+  padding: 5px 0 5px 35px; }
+
+.criteria {
+  width: 50%;
+  margin: 0 auto;
+  padding: 3% 0 10% 0; }
+  .criteria h3 {
+    font-size: 22px;
+    font-size: 2.2rem; }
+  .criteria p {
+    font-size: 20px;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0 auto; }
+  .criteria span.highlight {
+    color: #E8EDDF;
+    text-transform: uppercase; }
+
+.results-btn input[type=submit] {
+  padding: 10px 150px;
+  font-size: 26px;
+  font-size: 2.6rem;
+  background: #F5CB5C;
+  border: 2px solid #E8EDDF;
+  border-radius: 3px 3px 3px 3px;
+  text-transform: uppercase; }
+
+div.results {
+  margin: 0 auto;
+  padding-top: 10%; }
+
 div.movie {
-  width: 33.33%;
-  float: left; }
+  width: 31.3%;
+  float: left;
+  height: 100vh;
+  text-align: center;
+  background: #E8EDDF;
+  margin: 1%; }
+
+.movie h3 {
+  font-size: 18px;
+  font-size: 1.8rem; }
 
 .movie-poster {
-  width: 50%; }
+  width: 50%;
+  padding-top: 10%; }
 
 .description {
-  width: 80%; }
+  width: 80%;
+  margin: 0 auto;
+  font-size: 16px;
+  font-size: 1.6rem; }

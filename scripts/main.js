@@ -59,7 +59,7 @@ movieApp.results = function() {
 movieApp.displayResults = function() {
 	$('.results').html('');
 	for (var i in movieInfo.results) {
-		$('.results').append('<div class="movie">' + '<img class="movie-poster" src="http://image.tmdb.org/t/p/w500' + movieInfo.results[i].poster_path + '">' + '<p>' + movieInfo.results[i].title + '</p>' + '<p class="description">' + movieInfo.results[i].overview + '</p>' + '<p>' + movieInfo.results[i].id + '</p>' + '<p>' + movieInfo.bechdelRating + '</p>' + '</div>');
+		$('.results').append('<div class="movie">' + '<img class="movie-poster" src="http://image.tmdb.org/t/p/w500' + movieInfo.results[i].poster_path + '">' + '<h3>' + movieInfo.results[i].title + '</h3>' + '<p class="description">' + movieInfo.results[i].overview + '</p>' + '<p>' + movieInfo.results[i].id + '</p>' + '<p>' + movieInfo.bechdelRating + '</p>' + '</div>');
 	};
 };
 

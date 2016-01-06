@@ -13,6 +13,8 @@ html {
 
 body {
 	@include fontSize(12);
+	font-family: 'Francois One', sans-serif;
+	background: #9DC5BB;
 }
 
 .container {
@@ -21,15 +23,105 @@ body {
 	margin: 0 auto;
 }
 
+form {
+	text-align: center;
+}
+
+h1 {
+	text-align: center;
+	padding: 5% 0;
+	@include fontSize(46);
+	letter-spacing: 4px;
+}
+
+h2 {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+
+		span {
+			padding: 0 1% 0 2%;
+			@include fontSize(28);
+			color: #E8EDDF;
+		}
+
+		select {
+			-webkit-appearance: none; 
+			padding-right: 2%;
+		}
+}
+
+select.genre {
+		width: 13%;
+		padding: 5px 0 5px 28px;
+}
+
+select.year {
+		width: 10%;
+		padding: 5px 0 5px 35px;
+
+}
+
+.criteria {
+	width: 50%;
+	margin: 0 auto;
+	padding: 3% 0 10% 0;
+
+	h3 {
+	@include fontSize(22);
+
+}
+	p {
+		@include fontSize(20);
+		text-align: center;
+		margin: 0 auto;
+	}
+
+	span.highlight {
+		color: #E8EDDF;
+		text-transform: uppercase;
+	}
+}
+
+
+
+.results-btn {
+
+		input[type=submit] {
+			padding: 10px 150px;
+			@include fontSize(26);
+			background: #F5CB5C;
+			border: 2px solid #E8EDDF;
+			border-radius: 3px 3px 3px 3px;
+			text-transform: uppercase;
+		}
+}
+
+div.results {
+	margin: 0 auto;
+	padding-top: 10%;
+}
+
+
 div.movie {
-	width: 33.33%;
+	width: 31.3%;
 	float: left;
+	height: 100vh;
+	text-align: center;
+	background: #E8EDDF;
+	margin: 1%;
+}
+
+.movie h3 {
+	@include fontSize(18);
 }
 
 .movie-poster {
 	width: 50%;
+	padding-top: 10%;
 }
 
 .description {
 	width: 80%;
+	margin: 0 auto;
+	@include fontSize(16);
 }

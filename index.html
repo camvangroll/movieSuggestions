@@ -5,50 +5,62 @@
 	<title>Movie Suggestions vs. Beschdel</title>
 	<link rel="icon" type="image/png" href="assets/whitesquare.png"/>
 	<link rel="stylesheet" href="styles/style.css">
-</head>
+	<link href='https://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
 <body>
 
 <div class="container clearfix">
+
+<header>
 	
-	<h1>Movie Suggestions App</h1>
+	<h1>What Movie Should We Watch?</h1>
 
 <form action="">
-<h2>Choose Year</h2>
-	<select name="year" id="year">
-		<option value="1980">1980</option>
-		<option value="1985">1985</option>
-		<option value="1990">1990</option>
-		<option value="1995">1995</option>
-		<option value="2000">2000</option>
-		<option value="2000">2000</option>
-		<option value="2005">2005</option>
-		<option value="2010">2010</option>
-		<option value="2015">2015</option>
-	</select>
+	<h2>
+		<span>Choose Year</span>
+			<select class="year" name="year" id="year">
+				<option value="1980">1980</option>
+				<option value="1985">1985</option>
+				<option value="1990">1990</option>
+				<option value="1995">1995</option>
+				<option value="2000">2000</option>
+				<option value="2000">2000</option>
+				<option value="2005">2005</option>
+				<option value="2010">2010</option>
+				<option value="2015">2015</option>
+			</select>
 
-	<select name="genre" id="genre">
-		<option value="28">Action</option>
-		<option value="12">Adventure</option>
-		<option value="16">Animation</option>
-		<option value="35">Comedy</option>
-		<option value="80">Crime</option>
-		<option value="99">Documentary</option>
-		<option value="18">Drama</option>
-		<option value="10751">Family</option>
-		<option value="14">Fantasy</option>
-		<option value="10769">Foreign</option>
-		<option value="27">Horror</option>
-		<option value="9648">Mystery</option>
-		<option value="10749">Romance</option>
-		<option value="53">Thriller</option>
-		<option value="37">Western</option>
-		<option value="10752">War</option>
-	</select>
+		<span>Choose Genre</span>
+			<select class="genre" name="genre" id="genre">
+				<option value="28">Action</option>
+				<option value="12">Adventure</option>
+				<option value="16">Animation</option>
+				<option value="35">Comedy</option>
+				<option value="80">Crime</option>
+				<option value="99">Documentary</option>
+				<option value="18">Drama</option>
+				<option value="10751">Family</option>
+				<option value="14">Fantasy</option>
+				<option value="10769">Foreign</option>
+				<option value="27">Horror</option>
+				<option value="9648">Mystery</option>
+				<option value="10749">Romance</option>
+				<option value="53">Thriller</option>
+				<option value="37">Western</option>
+				<option value="10752">War</option>
+			</select>
+</h2>
+
+<div class="criteria">
+	<h3>And does it pass the Bechdel test?</h3>
+	<p>i.e does it have more than <span class="highlight">two women in it, </span> who <span class="highlight"> talk to each other </span> about something <span class="highlight"> other than a man. </span></p>
+</div>
 
 	<div class="results-btn">
-	<input type="submit" value="Get Results" id="submit">
+	<input type="submit" value="Find Movie" id="submit">
 	</div>
 </form>
+</header>
 
 	<div class="results"></div>
 
