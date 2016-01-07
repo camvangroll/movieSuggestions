@@ -125,7 +125,7 @@ movieApp.results = function() {
 movieApp.displayResults = function() {
 	$('.results').html('');
 	for (var i in movieInfo.results) {
-		$('.results').append('<div class="movie">' + '<img class="movie-poster" src="http://image.tmdb.org/t/p/w500' + movieInfo.results[i].poster_path + '">' + '<a class="titleLink" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id + '"> <h3>' + movieInfo.results[i].title + '</h3> </a>' + '<p class="description">' + movieInfo.results[i].overview + '</p>' + '<p>' + movieInfo.results[i].bechdelRating + '</p>' + '</div>');
+		$('.results').append('<div class="movie">' + '<a target="_blank" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id +'">' + '<img class="movie-poster" src="http://image.tmdb.org/t/p/w500' + movieInfo.results[i].poster_path +'">' + '</a>' + '<a class="titleLink" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id + '"> <h3>' + movieInfo.results[i].title + '</h3> </a>' + '<p class="description">' + movieInfo.results[i].overview + '</p>' + '<p>' + movieInfo.results[i].bechdelRating + '</p>' + '</div>');
 	};
 	$('.submitButton').attr("value", "Complete!");
 	setTimeout(function(){
