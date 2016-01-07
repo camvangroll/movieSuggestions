@@ -145,6 +145,9 @@ body {
 form {
   text-align: center; }
 
+input:focus, select:focus, textarea:focus, button:focus {
+  outline: none; }
+
 h1 {
   text-align: center;
   padding: 5% 0;
@@ -197,17 +200,23 @@ select.year {
   border-radius: 3px 3px 3px 3px;
   text-transform: uppercase; }
 
-div.results {
+div.container {
   margin: 0 auto;
   padding-top: 10%; }
 
+div.results {
+  margin-top: 50px; }
+
 div.movie {
-  width: 31.3%;
+  width: 31%;
+  height: 600px;
   float: left;
-  height: 100vh;
   text-align: center;
   background: #E8EDDF;
-  margin: 1%; }
+  margin: 1%;
+  padding: 15px; }
+  div.movie a.titleLink {
+    color: black; }
 
 .movie h3 {
   font-size: 16px;
