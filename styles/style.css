@@ -150,7 +150,7 @@ input:focus, select:focus, textarea:focus, button:focus {
 
 h1 {
   text-align: center;
-  padding: 5% 0;
+  padding-bottom: 3%;
   font-size: 46px;
   font-size: 4.6rem;
   letter-spacing: 4px; }
@@ -202,7 +202,7 @@ select.year {
 
 div.container {
   margin: 0 auto;
-  padding-top: 10%; }
+  padding-top: 8%; }
 
 div.results {
   margin-top: 50px; }
@@ -231,3 +231,25 @@ div.movie {
   margin: 0 auto;
   font-size: 14px;
   font-size: 1.4rem; }
+
+.pass {
+  font-size: 24px;
+  color: #178e70;
+  border: 2px solid #178e70;
+  width: 50%;
+  text-transform: uppercase;
+  margin: 5% auto;
+  padding: 3px;
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg); }
+
+.fail {
+  font-size: 24px;
+  color: #B90D0D;
+  border: 2px solid #B90D0D;
+  width: 50%;
+  text-transform: uppercase;
+  margin: 10% auto;
+  padding: 3px;
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg); }

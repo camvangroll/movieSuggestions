@@ -13,7 +13,6 @@ movieApp.getMovies = function() {
 		dataType: 'jsonp'
 	}).then(function(data) {
 		movieInfo = data;
-		console.log(movieInfo);
 		movieApp.shortenDescriptions();
 		movieApp.getIMDBNumber();
 	});
@@ -30,7 +29,6 @@ movieApp.shortenDescriptions = function() {
 };
 
 movieApp.getIMDBNumber = function() {
-
 	//Map results array and return new promise from $.ajax
 	//So the results stored in imdbNums is an array of promises
 	var imdbNums = movieInfo.results.map(function(num) {
@@ -77,6 +75,7 @@ movieApp.getIMDBNumber = function() {
 			Array.prototype.forEach.call(arguments, function(movie,index) {
 				movieInfo.results[index].bechdelRating = movie[0].rating;
 				console.log(movieInfo.results[index].bechdelRating);
+
 			});
 
 			movieApp.displayResults();
@@ -124,10 +123,18 @@ movieApp.results = function() {
 
 movieApp.displayResults = function() {
 	$('.results').html('');
-	for (var i in movieInfo.results) {
-		$('.results').append('<div class="movie">' + '<a target="_blank" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id +'">' + '<img class="movie-poster" src="http://image.tmdb.org/t/p/w500' + movieInfo.results[i].poster_path +'">' + '</a>' + '<a class="titleLink" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id + '"> <h3>' + movieInfo.results[i].title + '</h3> </a>' + '<p class="description">' + movieInfo.results[i].overview + '</p>' + '<p>' + movieInfo.results[i].bechdelRating + '</p>' + '</div>');
+	for (var i in movieInfo.results)
+	if (movieInfo.results[i].bechdelRating >= 3) {
+		$('.results').append('<div class="movie">' + '<a target="_blank" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id +'">' + '<img class="movie-poster" src="http://image.tmdb.org/t/p/w500' + movieInfo.results[i].poster_path +'">' + '</a>' + '<a class="titleLink" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id + '"> <h3>' + movieInfo.results[i].title + '</h3> </a>' + '<p class="description">' + movieInfo.results[i].overview + '</p>' + '<p class="pass">' + "pass!" + '</p>' + '</div>');
+					
+				} {
+		
+	if (movieInfo.results[i].bechdelRating <= 3) {
+					$('.results').append('<div class="movie">' + '<a target="_blank" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id +'">' + '<img class="movie-poster" src="http://image.tmdb.org/t/p/w500' + movieInfo.results[i].poster_path +'">' + '</a>' + '<a class="titleLink" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id + '"> <h3>' + movieInfo.results[i].title + '</h3> </a>' + '<p class="description">' + movieInfo.results[i].overview + '</p>' + '<p class="fail">' + "fail!" + '</p>' + '</div>');
+				}
 	};
 	$('.submitButton').attr("value", "Complete!");
+	$('html,body').animate({scrollTop:$("#results").offset().top}, 'slow');
 	setTimeout(function(){
 		$('.submitButton').attr("value", "Search Again");
 	}, 3000);
