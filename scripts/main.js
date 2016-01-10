@@ -107,11 +107,16 @@ movieApp.displayResults = function() {
 			$('.results').append('<div class="movie">' + '<a target="_blank" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id +'">' + '<img class="movie-poster" src="http://image.tmdb.org/t/p/w500' + movieInfo.results[i].poster_path +'">' + '</a>' + '<a class="titleLink" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id + '"> <h3>' + movieInfo.results[i].title + '</h3> </a>' + '<p class="description">' + movieInfo.results[i].overview + '</p>' + '<a target="_blank" href="http://bechdeltest.com/view/' + movieInfo.results[i].bechdelLink + '"><p class="fail">' + "fail!" + '</p></a>' + '</div>');
 		}
 	};
-	$('.submitButton').attr("value", "Complete!");
-	$('html,body').animate({scrollTop:$("#results").offset().top}, 'slow');
-	setTimeout(function(){
-		$('.submitButton').attr("value", "Search Again");
-	}, 3000);
+	if ($('div.movie').length = 0) {
+		alert('No results found for this search. Please try again.');
+	} else {
+		$('.submitButton').attr("value", "Complete!");
+		$('html,body').animate({scrollTop:$("#results").offset().top}, 'slow');
+		setTimeout(function(){
+			$('.submitButton').attr("value", "Search Again");
+		}, 3000);
+	}
+	console.log('number of results ' + $('div.movie').length);
 };
 
 $(function() {
