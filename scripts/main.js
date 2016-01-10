@@ -4,6 +4,10 @@ var movieApp = {};
 
 var movieInfo = {};
 
+var currentTime = new Date();
+
+var currentYear = currentTime.getFullYear();
+
 movieApp.getMovies = function() {
 	var releaseYear = $('#year').val();
 	var genreCode = $('#genre').val();
@@ -112,4 +116,5 @@ movieApp.displayResults = function() {
 
 $(function() {
 	movieApp.results();
+	$('.currentYear').text(currentYear);
 });

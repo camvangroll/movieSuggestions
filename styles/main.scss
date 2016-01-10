@@ -172,12 +172,18 @@ footer img {
 }
 
 footer {
-	display: none;
 	text-align: center;
+	margin-top: 20px;
 
 	 a {
 	 	color: #E8EDDF;
 	 	text-decoration: none;
+	 }
+
+	 p {
+	 	@include fontSize(14);
+	 	line-height: 2;
+	 	margin-top: 20px;
 	 }
 }
 

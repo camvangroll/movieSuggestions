@@ -270,11 +270,16 @@ footer img {
   width: 7%; }
 
 footer {
-  display: none;
-  text-align: center; }
+  text-align: center;
+  margin-top: 20px; }
   footer a {
     color: #E8EDDF;
     text-decoration: none; }
+  footer p {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 2;
+    margin-top: 20px; }
 
 @media (max-width: 800px) {
   div.movie {

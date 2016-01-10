@@ -9,78 +9,79 @@
 	<link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
 <body>
 
-<div class="container clearfix">
+	<div class="container clearfix">
 
-<header>
-	
-	<h1>What Movie Should We Watch?</h1>
+		<header>
+			
+			<h1>What Movie Should We Watch?</h1>
 
-<form action="">
-	<h2 class="menuOption">
-		<span>Choose Year</span>
-			<select class="year" name="year" id="year">
-				<option value="2015">2015</option>
-				<option value="2014">2014</option>
-				<option value="2013">2013</option>
-				<option value="2012">2012</option>
-				<option value="2011">2011</option>
-				<option value="2010">2010</option>
-				<option value="2009">2009</option>
-				<option value="2008">2008</option>
-				<option value="2007">2007</option>
-				<option value="2006">2006</option>
-				<option value="2005">2005</option>
-				<option value="2004">2004</option>
-				<option value="2003">2003</option>
-				<option value="2002">2002</option>
-				<option value="2001">2001</option>
-				<option value="2000">2000</option>
-				<option value="1999">1999</option>
-				<option value="1998">1998</option>
-				<option value="1997">1997</option>
-				<option value="1996">1996</option>
-				<option value="1995">1995</option>
-			</select>
-	</h2>
-	<h2 class="menuOption">
-		<span>Choose Genre</span>
-			<select class="genre" name="genre" id="genre">
-				<option value="28">Action</option>
-				<option value="12">Adventure</option>
-				<option value="16">Animation</option>
-				<option value="35">Comedy</option>
-				<option value="80">Crime</option>
-				<option value="18">Drama</option>
-				<option value="10751">Family</option>
-				<option value="14">Fantasy</option>
-				<option value="10769">Foreign</option>
-				<option value="27">Horror</option>
-				<option value="9648">Mystery</option>
-				<option value="10749">Romance</option>
-				<option value="53">Thriller</option>
-				<option value="37">Western</option>
-				<option value="10752">War</option>
-			</select>
-	</h2>
+			<form action="">
+				<h2 class="menuOption">
+					<span>Choose Year</span>
+						<select class="year" name="year" id="year">
+							<option value="2015">2015</option>
+							<option value="2014">2014</option>
+							<option value="2013">2013</option>
+							<option value="2012">2012</option>
+							<option value="2011">2011</option>
+							<option value="2010">2010</option>
+							<option value="2009">2009</option>
+							<option value="2008">2008</option>
+							<option value="2007">2007</option>
+							<option value="2006">2006</option>
+							<option value="2005">2005</option>
+							<option value="2004">2004</option>
+							<option value="2003">2003</option>
+							<option value="2002">2002</option>
+							<option value="2001">2001</option>
+							<option value="2000">2000</option>
+							<option value="1999">1999</option>
+							<option value="1998">1998</option>
+							<option value="1997">1997</option>
+							<option value="1996">1996</option>
+							<option value="1995">1995</option>
+						</select>
+				</h2>
+				<h2 class="menuOption">
+					<span>Choose Genre</span>
+						<select class="genre" name="genre" id="genre">
+							<option value="28">Action</option>
+							<option value="12">Adventure</option>
+							<option value="16">Animation</option>
+							<option value="35">Comedy</option>
+							<option value="80">Crime</option>
+							<option value="18">Drama</option>
+							<option value="10751">Family</option>
+							<option value="14">Fantasy</option>
+							<option value="10769">Foreign</option>
+							<option value="27">Horror</option>
+							<option value="9648">Mystery</option>
+							<option value="10749">Romance</option>
+							<option value="53">Thriller</option>
+							<option value="37">Western</option>
+							<option value="10752">War</option>
+						</select>
+				</h2>
 
-	<div class="criteria">
-		<h3>And does it pass the Bechdel test?</h3>
-		<p>i.e does it have more than <span class="highlight">two women in it, </span> who <span class="highlight"> talk to each other </span> about something <span class="highlight"> other than a man. </span></p>
+				<div class="criteria">
+					<h3>And does it pass the Bechdel test?</h3>
+					<p>i.e does it have more than <span class="highlight">two women in it, </span> who <span class="highlight"> talk to each other </span> about something <span class="highlight"> other than a man. </span></p>
+				</div>
+
+				<div class="results-btn">
+				<input type="submit" value="Find Movies" id="submit" class="submitButton">
+				</div>
+			</form>
+		</header>
+
+		<div class="results" id="results"></div>
+
+		<footer>
+			<p class="description">Powered by <a href="https://www.themoviedb.org/documentation/api" target="_blank">The Movie DB</a> and <a href="http://bechdeltest.com/api/v1/doc" target="_blank">Bechdel Test</a> API's.</p>
+			<p class="description">Copyright <span class="currentYear"></span> Camille van Groll and Patrick Cameron</p>
+		</footer>
+
 	</div>
-
-	<div class="results-btn">
-	<input type="submit" value="Find Movies" id="submit" class="submitButton">
-	</div>
-</form>
-</header>
-
-	<div class="results" id="results"></div>
-
-<footer>
-	<p>Powered by <img src="assets/mdcopyright.svg" alt="moviedatabase copyright image">, Bechdel Test courtesy of <a href="http://bechdeltest.com/">bechdeltest.com</a>, copyright Camille van Groll and Patrick Cameron</p>
-</footer>
-
-</div>
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
