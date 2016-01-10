@@ -170,13 +170,16 @@ h2 {
     -webkit-appearance: none;
     padding-right: 2%; }
 
-select.genre {
-  width: 13%;
-  padding: 5px 0 5px 28px; }
+h2.menuOption {
+  display: inline; }
 
 select.year {
-  width: 10%;
-  padding: 5px 0 5px 35px; }
+  width: 100px;
+  padding: 5px 0 5px 30px; }
+
+select.genre {
+  width: 150px;
+  padding: 5px 0 5px 30px; }
 
 .criteria {
   width: 50%;
@@ -189,7 +192,8 @@ select.year {
     font-size: 20px;
     font-size: 2rem;
     text-align: center;
-    margin: 0 auto; }
+    margin: 0 auto;
+    line-height: 2; }
   .criteria span.highlight {
     color: #E8EDDF;
     text-transform: uppercase; }
@@ -272,23 +276,21 @@ footer {
     color: #E8EDDF;
     text-decoration: none; }
 
-@media (max-width: 321px) {
-  h1 {
-    font-size: 96px;
-    font-size: 9.6rem; }
-  h2 span {
-    font-size: 68px;
-    font-size: 6.8rem; }
-  select.year {
-    padding: 10px 0 10px 70px; }
-  select.genre {
-    padding: 10px 0 10px 56px; }
+@media (max-width: 800px) {
+  div.movie {
+    width: 48%; }
   .criteria {
+    width: 80%; }
+  .container {
+    width: 98%; } }
+
+@media (max-width: 600px) {
+  h2.menuOption {
+    display: block;
+    line-height: 1.5; } }
+
+@media (max-width: 500px) {
+  div.movie {
     width: 100%; }
   .results-btn input[type=submit] {
-    padding: 3% 27%;
-    font-size: 54px;
-    font-size: 5.4rem;
-    letter-spacing: 2px; }
-  div.movie {
-    width: 48%; } }
+    padding: 10px 100px; } }

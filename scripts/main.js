@@ -89,7 +89,7 @@ movieApp.results = function() {
 	$('form').on('submit', function(e) {
 		e.preventDefault();
 		movieApp.getMovies();
-		$('.submitButton').attr("value", "Searching. Just a second...");
+		$('.submitButton').attr("value", "Searching...");
 	});	
 };
 
