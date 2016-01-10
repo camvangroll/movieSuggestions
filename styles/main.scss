@@ -23,6 +23,10 @@ body {
 	margin: 0 auto;
 }
 
+a {
+	text-decoration: none;
+}
+
 form {
 	text-align: center;
 }
@@ -107,12 +111,13 @@ div.container {
 
 div.results {
 	margin-top: 50px;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 div.movie {
 	width: 31%;
-	height: 600px;
-	float: left;
+	min-height: 600px;
 	text-align: center;
 	background: #E8EDDF;
 	margin: 1%;

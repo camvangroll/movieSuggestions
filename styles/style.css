@@ -142,6 +142,9 @@ body {
   width: 90%;
   margin: 0 auto; }
 
+a {
+  text-decoration: none; }
+
 form {
   text-align: center; }
 
@@ -205,12 +208,17 @@ div.container {
   padding-top: 8%; }
 
 div.results {
-  margin-top: 50px; }
+  margin-top: 50px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
 
 div.movie {
   width: 31%;
-  height: 600px;
-  float: left;
+  min-height: 600px;
   text-align: center;
   background: #E8EDDF;
   margin: 1%;
