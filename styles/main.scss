@@ -23,6 +23,10 @@ body {
 	margin: 0 auto;
 }
 
+a {
+	text-decoration: none;
+}
+
 form {
 	text-align: center;
 }
@@ -54,15 +58,18 @@ h2 {
 		}
 }
 
-select.genre {
-		width: 13%;
-		padding: 5px 0 5px 28px;
+h2.menuOption {
+	display: inline;
 }
 
 select.year {
-		width: 10%;
-		padding: 5px 0 5px 35px;
+		width: 100px;
+		padding: 5px 0 5px 30px;
+}
 
+select.genre {
+		width: 150px;
+		padding: 5px 0 5px 30px;
 }
 
 .criteria {
@@ -78,6 +85,7 @@ select.year {
 		@include fontSize(20);
 		text-align: center;
 		margin: 0 auto;
+		line-height: 2;
 	}
 
 	span.highlight {
@@ -89,7 +97,6 @@ select.year {
 
 
 .results-btn {
-
 		input[type=submit] {
 			padding: 10px 150px;
 			@include fontSize(26);
@@ -107,12 +114,13 @@ div.container {
 
 div.results {
 	margin-top: 50px;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 div.movie {
 	width: 31%;
-	height: 600px;
-	float: left;
+	min-height: 600px;
 	text-align: center;
 	background: #E8EDDF;
 	margin: 1%;
@@ -164,49 +172,84 @@ footer img {
 }
 
 footer {
-	display: none;
 	text-align: center;
+	margin-top: 20px;
 
 	 a {
 	 	color: #E8EDDF;
 	 	text-decoration: none;
 	 }
+
+	 p {
+	 	@include fontSize(14);
+	 	line-height: 2;
+	 	margin-top: 20px;
+	 }
 }
 
-
-@media (max-width: 321px) {
-	
-	h1 {
-		@include fontSize(96);
-	}
-
-	h2 span {
-		@include fontSize(68);
-	}
-
-	select.year {
-		padding: 10px 0 10px 70px;
-	}
-
-	select.genre {
-		padding: 10px 0 10px 56px;
-	}
-
-	.criteria {
-		width: 100%;
-
-	}
-
-	.results-btn input[type=submit] {
-		padding: 3% 27%;
-		@include fontSize(54);
-		letter-spacing: 2px;
-	}
-
+@media (max-width: 800px) {
 	div.movie {
 		width: 48%;
 	}
-
-
-
+	.criteria {
+		width: 80%;
+	}
+	.container {
+		width: 98%;
+	}
 }
+
+@media (max-width: 600px) {
+	h2.menuOption {
+		display: block;
+		line-height: 1.5;
+	}
+}
+
+@media (max-width: 500px) {
+	div.movie {
+		width: 100%;
+	}
+	.results-btn {
+			input[type=submit] {
+				padding: 10px 100px;
+			}
+	}
+}
+
+// @media (max-width: 321px) {
+	
+// 	h1 {
+// 		@include fontSize(96);
+// 	}
+
+// 	h2 span {
+// 		@include fontSize(68);
+// 	}
+
+// 	select.year {
+// 		padding: 10px 0 10px 70px;
+// 	}
+
+// 	select.genre {
+// 		padding: 10px 0 10px 56px;
+// 	}
+
+// 	.criteria {
+// 		width: 100%;
+
+// 	}
+
+// 	.results-btn input[type=submit] {
+// 		padding: 3% 27%;
+// 		@include fontSize(54);
+// 		letter-spacing: 2px;
+// 	}
+
+// 	div.movie {
+// 		width: 48%;
+// 	}
+
+
+
+// }

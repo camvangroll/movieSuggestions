@@ -4,6 +4,10 @@ var movieApp = {};
 
 var movieInfo = {};
 
+var currentTime = new Date();
+
+var currentYear = currentTime.getFullYear();
+
 movieApp.getMovies = function() {
 	var releaseYear = $('#year').val();
 	var genreCode = $('#genre').val();
@@ -74,6 +78,7 @@ movieApp.getIMDBNumber = function() {
 
 			Array.prototype.forEach.call(arguments, function(movie,index) {
 				movieInfo.results[index].bechdelRating = movie[0].rating;
+				movieInfo.results[index].bechdelLink = movie[0].id;
 				console.log(movieInfo.results[index].bechdelRating);
 
 			});
@@ -82,64 +87,39 @@ movieApp.getIMDBNumber = function() {
 		});
 
 	});
-	// for (var i in movieInfo.results) {
-
-
-	// 	(function(index) {
-	// 		$.ajax({
-	// 			url: 'http://api.themoviedb.org/3/movie/' + movieInfo.results[index].id + '?api_key=' + movieDBKey,
-	// 			method: 'GET',
-	// 			dataType: 'jsonp'
-	// 		}).then(function(data) {
-	// 			var imdbNum = data.imdb_id;
-	// 			imdbNum = imdbNum.substr(2);
-	// 			imdbNum = imdbNum.toString();
-	// 			console.log(imdbNum);
-	// 			$.ajax({
-	// 				url: 'http://proxy.hackeryou.com',
-	// 				method: 'GET',
-	// 				dataType: 'json',
-	// 				data: {
-	// 					reqUrl: 'http://bechdeltest.com/api/v1/getMovieByImdbId',
-	// 					imdbid: imdbNum
-	// 				}
-	// 				}).then(function(data) {
-	// 					movieInfo.results[index].bechdelRating = data.rating;
-	// 					console.log(movieInfo.results[index].bechdelRating);
-	// 			});
-	// 		});
-	// 	})(i)
-	// }
-	// movieApp.displayResults();
 };
 
 movieApp.results = function() {
 	$('form').on('submit', function(e) {
 		e.preventDefault();
 		movieApp.getMovies();
-		$('.submitButton').attr("value", "Searching. Just a second...");
+		$('.submitButton').attr("value", "Searching...");
 	});	
 };
 
 movieApp.displayResults = function() {
 	$('.results').html('');
-	for (var i in movieInfo.results)
-	if (movieInfo.results[i].bechdelRating >= 3) {
-		$('.results').append('<div class="movie">' + '<a target="_blank" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id +'">' + '<img class="movie-poster" src="http://image.tmdb.org/t/p/w500' + movieInfo.results[i].poster_path +'">' + '</a>' + '<a class="titleLink" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id + '"> <h3>' + movieInfo.results[i].title + '</h3> </a>' + '<p class="description">' + movieInfo.results[i].overview + '</p>' + '<p class="pass">' + "pass!" + '</p>' + '</div>');
-					
-				} {
-		
-	if (movieInfo.results[i].bechdelRating <= 3) {
-					$('.results').append('<div class="movie">' + '<a target="_blank" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id +'">' + '<img class="movie-poster" src="http://image.tmdb.org/t/p/w500' + movieInfo.results[i].poster_path +'">' + '</a>' + '<a class="titleLink" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id + '"> <h3>' + movieInfo.results[i].title + '</h3> </a>' + '<p class="description">' + movieInfo.results[i].overview + '</p>' + '<p class="fail">' + "fail!" + '</p>' + '</div>');
-				}
+	for (var i in movieInfo.results) {
+		if (movieInfo.results[i].bechdelRating >= 3) {
+			$('.results').append('<div class="movie">' + '<a target="_blank" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id +'">' + '<img class="movie-poster" src="http://image.tmdb.org/t/p/w500' + movieInfo.results[i].poster_path +'">' + '</a>' + '<a target="_blank" class="titleLink" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id + '"> <h3>' + movieInfo.results[i].title + '</h3> </a>' + '<p class="description">' + movieInfo.results[i].overview + '</p>' + '<a target="_blank" href="http://bechdeltest.com/view/' + movieInfo.results[i].bechdelLink + '"><p class="pass">' + "pass!" + '</p></a>' + '</div>');
+						
+		} else if (movieInfo.results[i].bechdelRating <= 3) {
+			$('.results').append('<div class="movie">' + '<a target="_blank" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id +'">' + '<img class="movie-poster" src="http://image.tmdb.org/t/p/w500' + movieInfo.results[i].poster_path +'">' + '</a>' + '<a class="titleLink" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id + '"> <h3>' + movieInfo.results[i].title + '</h3> </a>' + '<p class="description">' + movieInfo.results[i].overview + '</p>' + '<a target="_blank" href="http://bechdeltest.com/view/' + movieInfo.results[i].bechdelLink + '"><p class="fail">' + "fail!" + '</p></a>' + '</div>');
+		}
 	};
-	$('.submitButton').attr("value", "Complete!");
-	$('html,body').animate({scrollTop:$("#results").offset().top}, 'slow');
-	setTimeout(function(){
-		$('.submitButton').attr("value", "Search Again");
-	}, 3000);
+	if ($('div.movie').length = 0) {
+		alert('No results found for this search. Please try again.');
+	} else {
+		$('.submitButton').attr("value", "Complete!");
+		$('html,body').animate({scrollTop:$("#results").offset().top}, 'slow');
+		setTimeout(function(){
+			$('.submitButton').attr("value", "Search Again");
+		}, 3000);
+	}
+	console.log('number of results ' + $('div.movie').length);
 };
 
 $(function() {
 	movieApp.results();
+	$('.currentYear').text(currentYear);
 });
