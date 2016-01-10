@@ -116,6 +116,9 @@ movieApp.displayResults = function() {
 			$('.submitButton').attr("value", "Search Again");
 		}, 3000);
 	}
+
+	$('footer').show();
+
 	console.log('number of results ' + $('div.movie').length);
 };
 

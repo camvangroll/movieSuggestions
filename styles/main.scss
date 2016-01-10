@@ -172,6 +172,7 @@ footer img {
 }
 
 footer {
+	display: none;
 	text-align: center;
 	margin-top: 20px;
 
@@ -217,39 +218,3 @@ footer {
 	}
 }
 
-// @media (max-width: 321px) {
-	
-// 	h1 {
-// 		@include fontSize(96);
-// 	}
-
-// 	h2 span {
-// 		@include fontSize(68);
-// 	}
-
-// 	select.year {
-// 		padding: 10px 0 10px 70px;
-// 	}
-
-// 	select.genre {
-// 		padding: 10px 0 10px 56px;
-// 	}
-
-// 	.criteria {
-// 		width: 100%;
-
-// 	}
-
-// 	.results-btn input[type=submit] {
-// 		padding: 3% 27%;
-// 		@include fontSize(54);
-// 		letter-spacing: 2px;
-// 	}
-
-// 	div.movie {
-// 		width: 48%;
-// 	}
-
-
-
-// }
