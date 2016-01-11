@@ -1,12 +1,12 @@
 var movieDBKey = "68648bc22dd03754bbe2b368551f7eb2";
 
-var movieApp = {};
-
 var movieInfo = {};
 
 var currentTime = new Date();
 
 var currentYear = currentTime.getFullYear();
+
+var movieApp = {};
 
 movieApp.getMovies = function() {
 	var releaseYear = $('#year').val();
@@ -55,7 +55,6 @@ movieApp.getIMDBNumber = function() {
 		//And we can use .call() to say HEY treat my arguments as and array
 		//so I can use this method. 
 		var movies = Array.prototype.map.call(arguments,function(movie) {
-			console.log(movie);
 			var imdbNum = movie[0].imdb_id;
 			imdbNum = imdbNum.substr(2);
 			imdbNum = imdbNum.toString();
@@ -79,7 +78,6 @@ movieApp.getIMDBNumber = function() {
 			Array.prototype.forEach.call(arguments, function(movie,index) {
 				movieInfo.results[index].bechdelRating = movie[0].rating;
 				movieInfo.results[index].bechdelLink = movie[0].id;
-				console.log(movieInfo.results[index].bechdelRating);
 
 			});
 
@@ -99,6 +97,7 @@ movieApp.results = function() {
 
 movieApp.displayResults = function() {
 	$('.results').html('');
+	
 	for (var i in movieInfo.results) {
 		if (movieInfo.results[i].bechdelRating >= 3) {
 			$('.results').append('<div class="movie">' + '<a target="_blank" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id +'">' + '<img class="movie-poster" src="http://image.tmdb.org/t/p/w500' + movieInfo.results[i].poster_path +'">' + '</a>' + '<a target="_blank" class="titleLink" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id + '"> <h3>' + movieInfo.results[i].title + '</h3> </a>' + '<p class="description">' + movieInfo.results[i].overview + '</p>' + '<a target="_blank" href="http://bechdeltest.com/view/' + movieInfo.results[i].bechdelLink + '"><p class="pass">' + "pass!" + '</p></a>' + '</div>');
@@ -107,6 +106,7 @@ movieApp.displayResults = function() {
 			$('.results').append('<div class="movie">' + '<a target="_blank" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id +'">' + '<img class="movie-poster" src="http://image.tmdb.org/t/p/w500' + movieInfo.results[i].poster_path +'">' + '</a>' + '<a class="titleLink" href="https://www.themoviedb.org/movie/' + movieInfo.results[i].id + '"> <h3>' + movieInfo.results[i].title + '</h3> </a>' + '<p class="description">' + movieInfo.results[i].overview + '</p>' + '<a target="_blank" href="http://bechdeltest.com/view/' + movieInfo.results[i].bechdelLink + '"><p class="fail">' + "fail!" + '</p></a>' + '</div>');
 		}
 	};
+	
 	if ($('div.movie').length = 0) {
 		alert('No results found for this search. Please try again.');
 	} else {
@@ -118,8 +118,6 @@ movieApp.displayResults = function() {
 	}
 
 	$('footer').show();
-
-	console.log('number of results ' + $('div.movie').length);
 };
 
 $(function() {
